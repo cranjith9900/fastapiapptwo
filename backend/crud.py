@@ -2,8 +2,9 @@ import hashlib
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 
-from models import User, Book
-from schemas import UserCreate, BookCreate
+from .models import User, Book
+from .schemas import UserCreate, BookCreate
+
 
 
 # Password hashing context (create once)
