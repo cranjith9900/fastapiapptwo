@@ -1,17 +1,9 @@
-import hashlib
 from sqlalchemy.orm import Session
-from passlib.context import CryptContext
-
 from .models import User, Book
 from .schemas import UserCreate, BookCreate
 
-
-
 # Password hashing context (create once)
-pwd_context = CryptContext(
-    schemes=["bcrypt"],
-    deprecated="auto"
-)
+
 def create_user(db: Session, user: UserCreate):
     db_user = User(
         email=user.email,
