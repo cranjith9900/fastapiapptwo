@@ -17,7 +17,9 @@ Base.metadata.create_all(bind=engine)
 async def root():
     return {"message": "Hello World"}
 
-
+@app.get("/hello")
+async def hello():
+    return {"message": "Hello World"}
 # -------------------- HEALTH CHECK --------------------
 
 @app.get("/health")
